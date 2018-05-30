@@ -1,0 +1,5 @@
+input rental.sql into your MySQL database
+put Musire folder into htdocs in XAMPP folder
+open XAMPP
+start Apache and MySQL
+open in your browser "localhost/Musire/"
