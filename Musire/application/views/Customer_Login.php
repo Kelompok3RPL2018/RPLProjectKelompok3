@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="bg-dark" lang="en">
 <head>
@@ -14,7 +13,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent">
         <a class="navbar-brand" href="<?php echo site_url('Home')?>">MUSIRE</a>
             <ul class="navbar-nav mr-auto">

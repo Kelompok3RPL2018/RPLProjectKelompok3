@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 10:03 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.0.30
+-- Generation Time: May 30, 2018 at 08:53 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,11 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `admin_id` varchar(8) NOT NULL,
+  `admin_id` int(10) NOT NULL,
   `admin_name` varchar(24) NOT NULL,
   `password` varchar(6) NOT NULL,
-  `contact` int(12) NOT NULL
+  `contact` bigint(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_name`, `password`, `contact`) VALUES
+(1, 'fikri', '12345', 85878586091);
 
 -- --------------------------------------------------------
 
@@ -64,9 +71,27 @@ CREATE TABLE `customer` (
   `contact_no` int(12) NOT NULL,
   `customer_email` varchar(40) NOT NULL,
   `address` varchar(50) NOT NULL,
-  `username` varchar(8) NOT NULL,
-  `password` varchar(6) NOT NULL
+  `username` varchar(10) NOT NULL,
+  `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `firstname`, `lastname`, `contact_no`, `customer_email`, `address`, `username`, `password`) VALUES
+(2, 'fikri', 'hashfi', 2147483647, 'fikrihashfi@gmail.com', 'klaten', 'fikri', '123'),
+(3, 'siapa', 'saya', 85, 'a@ok', 'kk', 'coba', '456'),
+(4, 'test', 'aja', 123456, 'test@test', 'bali', 'test', '123'),
+(5, 'test2', 'test2', 2, 'w@2', 'ww2', 'test2', 'test2'),
+(6, 'hai', 'hai', 123, 'asd@asd', 'asdsad asd', 'kakak', '123'),
+(7, 'hashfin', 'nashr', 12345678, 'w@5', 'waeqwe', 'hashfin', '12345'),
+(8, 'eaea', 'aea', 12345678, 'awe@wqe', 'qwe', 'cobacoba', 'sa'),
+(9, 'ea ea', 'qwewqe', 2147483647, 'qwewq@wweq.com', '123wwestreet', 'testing', 'testin'),
+(10, 'tettt', 'tetttt', 123415, 'awe@wqe.com', 'tettt', 'naruto k', 'naruto'),
+(11, 'qwe', 'qwe', 2147483647, 'dsfsdfds@w.com', 'wqe', 'sasuke k', 'sasuke'),
+(12, 'eaea', 'qwewqe', 12345678, 'test@test.com', 'qwe', 'sasuke b', 'sasuke'),
+(13, 'eaea', 'qwewqe', 12345, '123@123.com', '1234', 'fikr ', '123456');
 
 -- --------------------------------------------------------
 
@@ -92,12 +117,28 @@ CREATE TABLE `feedback` (
 --
 
 CREATE TABLE `instrument` (
+  `id_instrument` int(10) NOT NULL,
   `brand` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   `color` varchar(10) NOT NULL,
-  `price` int(11) NOT NULL,
-  `instrument` varchar(10) NOT NULL
+  `price` int(7) NOT NULL,
+  `instrument` varchar(10) NOT NULL,
+  `picture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `instrument`
+--
+
+INSERT INTO `instrument` (`id_instrument`, `brand`, `type`, `color`, `price`, `instrument`, `picture`) VALUES
+(1, 'coba', 'coba', 'coba', 6655777, 'guitar', 'D:/Xampp/htdocs/Musire/Image/tombol5.png'),
+(2, 'coba', 'coba', 'coba', 6655777, 'guitar', 'D:/Xampp/htdocs/Musire/Image/tombol6.png'),
+(3, 'coba', 'coba', 'coba', 6655777, 'guitar', 'D:/Xampp/htdocs/Musire/Image/tombol7.png'),
+(4, 'qwrqrwq', 'asd', '121221', 1234, 'weqqq', 'D:/Xampp/htdocs/Musire/Image/tombol8.png'),
+(5, 'qwrqrwq', 'asd', '121221', 1234, 'weqqq', 'D:/Xampp/htdocs/Musire/Image/tombol9.png'),
+(6, 'qwrqrwq', 'asd', '121221', 1234, 'weqqq', 'D:/Xampp/htdocs/Musire/Image/tombol10.png'),
+(7, 'qwrqrwq', 'asd', '121221', 1234, 'weqqq', 'D:/Xampp/htdocs/Musire/Image/tombol11.png'),
+(8, 'qwrqrwq', 'asd', '121221', 1234, 'weqqq', 'D:/Xampp/htdocs/Musire/Image/tombol12.png');
 
 -- --------------------------------------------------------
 
@@ -116,6 +157,12 @@ CREATE TABLE `payment` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -131,7 +178,7 @@ ALTER TABLE `feedback`
 -- Indexes for table `instrument`
 --
 ALTER TABLE `instrument`
-  ADD PRIMARY KEY (`type`);
+  ADD PRIMARY KEY (`id_instrument`);
 
 --
 -- Indexes for table `payment`
@@ -144,10 +191,22 @@ ALTER TABLE `payment`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `instrument`
+--
+ALTER TABLE `instrument`
+  MODIFY `id_instrument` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `payment`

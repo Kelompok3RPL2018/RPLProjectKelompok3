@@ -49,11 +49,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Customer';
-$route['User_NewAccount'] = 'Customer/CreateAccountShow';
-$route['Home'] = 'Customer/index';
-$route['User_Login'] = 'Customer/Login';
-$route['User_Register'] = 'Customer/register';
-$route['User_Logout'] = 'Customer/Logout';
+
+$route['default_controller'] = 'Welcome';
+$route['Home'] = 'Customer/Customer/index';
+$route['User_NewAccount'] = 'Customer/Customer/CreateAccountShow';
+$route['User_Login'] = 'Customer/Customer/Login';
+$route['User_Register'] = 'Customer/Customer/register';
+$route['User_Logout'] = 'Customer/Customer/Logout';
+
+$route['Admin_NewAccount'] = 'Admin/Admin/CreateAdminShow';
+$route['Admin'] = 'Admin/Admin/AdminLoginView';
+$route['Admin_Login'] = 'Admin/Admin/Login';
+$route['Admin_Add'] = 'Admin/Admin/AddAdminView';
+$route['Admin_Register'] = 'Admin/Admin/register';
+$route['Admin_Logout'] = 'Admin/Admin/logout';
+$route['AddInstrument'] = 'Admin/Admin/AddInstrumentView';
+$route['Tambah_Instrument'] = 'Admin/Admin/AddInstrument';
+$route['Lihat_Instrument'] = 'Admin/Admin/ViewInstrument';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
