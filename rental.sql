@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2018 at 07:08 PM
+-- Generation Time: Jun 01, 2018 at 07:14 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -125,18 +125,6 @@ INSERT INTO `instrument` (`instruments_id`, `instruments_name`, `brand`, `type`,
 (26, 'Cajon', 'Pearl', 'Tall Boy Fiberglass PCJ653', 'Black', 15000, 'Tall Boy Fiberglass PCJ653.jpg', 'Traditional cajons are 19” tall which is ideal for most players. Pearl’s Tall Boy cajon is 21” tall which adds 2 inches to the overall height and makes it perfect for taller players or for use as a drum throne with your kit. The durable fiberglass body includes fixed snares and a build-in bass port for booming low-end response.\r\n\r\nThe Tall Boy cajon features an Ebony Carubinga lacquer finish.'),
 (27, 'Bass', 'Fender', 'Vintage Modified Jazz \'70s', 'Olympic White', 25000, 'Vintage Modified Jazz \'70s', 'Squier\'s Vintage Modified Jazz Bass \'70s returns you to a classic period in Jazz Bass history. Sporting two crisp-sounding Fender®-designed pickups and a slim \"C\"-shaped neck, the Vintage Modified Jazz Bass \'70s offers super \'70s sound and feel for today\'s bassists, with superior Squier performance and value.\r\n\r\nFEATURES : Soft maple body. Vintage-tint maple neck with “C”-shaped profile. 20-fret maple fingerboard with black binding and black block inlays. Dual Fender®-designed single-coil Jazz Bass pickups. Black pickguard.');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `payment`
---
-
-CREATE TABLE `payment` (
-  `payment_id` int(11) NOT NULL,
-  `instruments_name` varchar(24) NOT NULL,
-  `amount` int(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -167,12 +155,6 @@ ALTER TABLE `instrument`
   ADD PRIMARY KEY (`instruments_id`);
 
 --
--- Indexes for table `payment`
---
-ALTER TABLE `payment`
-  ADD PRIMARY KEY (`payment_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -187,12 +169,6 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `instrument`
   MODIFY `instruments_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
