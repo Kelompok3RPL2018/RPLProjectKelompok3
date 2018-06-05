@@ -19,3 +19,7 @@ body {
   width: 350px;
   height: 350px;
 }
+
+.not-allowed-pointer{
+ cursor: not-allowed; 
+}

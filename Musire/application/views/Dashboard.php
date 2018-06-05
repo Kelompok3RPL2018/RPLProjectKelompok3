@@ -35,103 +35,55 @@
           </div>
 
 
+
           <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/1.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Saxophone</a>
-                  </h4>
-                  <h5>Rp.40.000,-/day</h5>
-                  <p class="card-text">Saxophone dengan kualitas terbaik, lebih dari 50 peminjam menyatakan puas..</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100 ">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/6(biola).jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">aasdaw</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          
+          <?php
+          //  $data["instrument"]=$this->database->ViewInstrument();
+          $this->load->helper('url');
+           if(!empty($instrument))
+            {
+              foreach($instrument as $alat)
+              {
+                // $id = $alat->id_instrument;
+                ?>
+                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card h-100">
+                  <a href="<?php echo base_url();?>Instrument/Instrument/Instrument_Detail_View/<?php echo $alat->id_instrument;?>"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/<?php echo $alat->picture; ?>" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="<?php echo base_url();?>Instrument/Instrument/Instrument_Detail_View/<?php echo $alat->id_instrument; ?>"><?php echo $alat->instrument;?> <?php echo $alat->brand; ?></a>
+                    </h4>
+                    <h5>Rp.<?php echo $alat->price ?>,-/day</h5>
+                    <p class="card-text">type : <?php echo $alat->type ?></p>
+                    <p class="card-text">color : <?php echo $alat->color ?></p>      
+                  </div>
+                  <div class="card-footer">
+                  <a href="<?php echo base_url();?>Instrument/Instrument/Instrument_Detail_View/<?php echo $alat->id_instrument; ?>" class="btn btn-success"> View Instrument</a>
+                  </div>
                 </div>
               </div>
-            </div>
+                <?php
+                // echo "<li>brand: ".$alat->brand."; type: ".$alat->type."</li>";
+              }
+            }
+          ?>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Three</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">adwaw</p>
+          <!-- <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card h-100">
+                  <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/1.jpg" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="#">a</a>
+                    </h4>
+                    <h5>Rp.40.000,-/day</h5>
+                    <p class="card-text">az</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/4.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Four</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">s</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/7(horn).jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Five</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">s</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="custom-card h-100">
-                <a href="#"><img class="card-img-top instrument-img" src="<?php echo base_url();?>/Image/8(flute).jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Six</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">yaaww</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
+              </div> -->
 
           </div>
           <!-- /.row -->

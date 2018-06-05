@@ -29,10 +29,14 @@
                     <label for="phonenum">Phone Number :</label>
                     <input type="text" placeholder="Phone Number" class="form-control" name="pnumber" required="">
                     </div>    
-                    <!-- <div class="form-group row">
-                    <label for="gender">Gender (M/F):</label>
-                    <input type="text" placeholder="Gender" class="form-control" name="gender" required="">
-                    </div>        -->
+                    <div class="form-group row">
+                    <label data-error="Required">Gender :  </label></br>
+                    <select id="gender-test1" name="gender" class="eq-ui-select" style="color:green;" required>
+                            <option value="" disabled selected>Choose your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                    </select>
+                    </div>       
           </div>
 
           <div class="p-5 rounded flex-column text-center center custom-card-white" style="height:80%; width:30%">

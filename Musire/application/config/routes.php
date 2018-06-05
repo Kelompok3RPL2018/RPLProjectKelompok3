@@ -56,7 +56,9 @@ $route['User_NewAccount'] = 'Customer/Customer/CreateAccountShow';
 $route['User_Login'] = 'Customer/Customer/Login';
 $route['User_Register'] = 'Customer/Customer/register';
 $route['User_Logout'] = 'Customer/Customer/Logout';
+$route['Dashboard'] = 'Customer/Customer/Home';
 
+$route['DeleteUser'] = 'Admin/Admin/Delete_User';
 $route['Admin_NewAccount'] = 'Admin/Admin/CreateAdminShow';
 $route['Admin'] = 'Admin/Admin/AdminLoginView';
 $route['Admin_Login'] = 'Admin/Admin/Login';
@@ -64,8 +66,17 @@ $route['Admin_Add'] = 'Admin/Admin/AddAdminView';
 $route['Admin_Register'] = 'Admin/Admin/register';
 $route['Admin_Logout'] = 'Admin/Admin/logout';
 $route['AddInstrument'] = 'Admin/Admin/AddInstrumentView';
-$route['Tambah_Instrument'] = 'Admin/Admin/AddInstrument';
+$route['View_Customer'] = 'Admin/Admin/View_Customer_Data';
 $route['Lihat_Instrument'] = 'Admin/Admin/ViewInstrument';
+$route['Dashboard_admin'] = 'Admin/Admin/Home';
+$route['View_Instrument'] = 'Admin/Admin/View_Instrument_Data';
+
+$route['View_Booking'] = 'Instrument/booking/view_booking';
+
+$route['Tambah_Instrument'] = 'Admin/Admin/AddInstrument';
+$route['Edit_Instrument'] = 'Admin/Admin/EditInstrument';
+
+$route['View_Rental'] = 'instrument/rental/View_Rental';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -19,7 +19,7 @@ function ScrollOurMusicIns(){window.scroll({
   }
 
 function ScrollAboutUs(){window.scroll({
-    top: 1400,  
+    top: 100000000,  
     behavior: 'smooth' 
   });
   }

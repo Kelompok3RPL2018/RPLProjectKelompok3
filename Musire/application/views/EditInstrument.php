@@ -13,27 +13,25 @@
 </head>
 
 <body>
-    
+<?php
+    foreach($instrument as $instrument){
+    ?>
 <div class="bg-light center" style="height:100%">
         <div class="p-5 rounded flex-column text-center justify-content-around custom-card lobsfont" style="height:80%; width:30%; color:yellow;">
-            <div><h3 style="color:green;">ADD INSTRUMENT</h3></br></div>
-            <?php echo form_open_multipart('Tambah_Instrument');?>
+            <div><h3 style="color:green;">Edit INSTRUMENT Info</h3></br></div>
+            <form action="<?php echo base_url('')?>Admin/Admin/EditInstrument/<?php echo $instrument->id_instrument;?>" method="post" name="editprofilform">
+
                     <div class="form-group row">
                     <label for="instr">Instrument :</label>
-                    <input type="text" placeholder="Instrument" class="form-control" name="instrument" required="">
-                    </div>  
-                    <div class="form-group row">
-                   <label for="upload">Upload File</label>
-                    <input type="file" name="imagefile" size="20" />
-                   <!-- <small id="usernameHelp" class="form-text text-muted">min 5 character, max 10 character.</small> -->
-                   </div>         
+                    <input type="text" placeholder="Instrument" value="<?php echo $instrument->instrument; ?>" class="form-control" name="instrument" required="">
+                    </div>         
                    <div class="form-group row">
                     <label for="Type">Type :</label>
-                    <input type="text" placeholder="Instrument Type" class="form-control" name="type" required="">
+                    <input type="text" placeholder="Instrument Type" value="<?php echo $instrument->type; ?>" class="form-control" name="type" required="">
                     </div> 
                     <div class="form-group row">
                     <label for="instr">Description :</label>
-                    <textarea type="text" placeholder="Description of Instrument" class="form-control" name="description" required=""></textarea>
+                    <textarea type="text" placeholder="Description of Instrument"  class="form-control" name="description" required=""><?php echo $instrument->description; ?></textarea>
                     </div>  
           </div>
 
@@ -43,11 +41,11 @@
                   
                    <div class="form-group row">
                         <label for="Brand">Brand :</label>
-                        <input type="text" placeholder="Instrument Brand" class="form-control" name="brand" required="">
+                        <input type="text" placeholder="Instrument Brand" value="<?php echo $instrument->brand; ?>" class="form-control" name="brand" required="">
                         </div> 
                     <div class="form-group row">
                         <label for="Color">Color :</label>
-                        <input type="text" placeholder="Instrument Color" class="form-control" name="color" required="">
+                        <input type="text" placeholder="Instrument Color" value="<?php echo $instrument->color; ?>" class="form-control" name="color" required="">
                         </div> 
                     <div class="form-group row">
                         <label for="Price">Price :</label>
@@ -55,18 +53,20 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text">Rp.</div>
                                 </div>
-                        <input type="number" placeholder="Instrument Price" class="form-control" name="price" required="">
+                        <input type="number" placeholder="Instrument Price" value="<?php echo $instrument->price; ?>" class="form-control" name="price" required="">
                         </div> 
                         <small id="priceHelp" class="form-text text-muted">max number : 7. tanpa titik / without dot(.)</small>
                      </div>   
 
-               <div><button type="submit" class="btn btn-success">Add</button></div>
+               <div><button type="submit" class="btn btn-success">Save</button></div>
                 </form>
            </div>
            <!-- <div><a href="Customer/CreateAccount.php" style:"color:red;">Buat akun baru ?</a></div> -->
            <h7><a href="<?php echo site_url('Home');?>">Kembali</a></h7>
          </div>
-
+         <?php
+    }
+    ?>
         
 </div>
     
